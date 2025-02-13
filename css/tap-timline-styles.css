@@ -270,8 +270,9 @@ body {
   display: flex;
   align-items: center;
   padding: 2rem 8rem;
+/*	border-top: 1px solid #fff;*/
 }
-/* Video Background */
+/* Video & Image Background */
 .tap-timeline-section-bg-video::before {
   content: "";
   position: absolute;
@@ -290,6 +291,8 @@ body {
   height: 100%;
   object-fit: cover;
   z-index: 0;
+	opacity: 1;
+	
 }
 /* Image Background */
 .tap-timeline-section-bg-image::before {
@@ -310,7 +313,56 @@ body {
   height: 100%;
   object-fit: cover;
   z-index: 0;
+	opacity: 1;
 }
+
+/* video & image hero */
+
+.tap-timeline-section-bg-video::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  z-index: 0;
+}
+.tap-timeline-section-bg-video-hero video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+/* Image Background */
+.tap-timeline-section-bg-image-hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  z-index: 0;
+}
+.tap-timeline-section-bg-image-hero img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.tap-timeline-aside-mobile-menu {
+	display: none;
+}
+
+
 /* mobile */
 @media screen and (max-width: 900px) {
   html {
@@ -353,7 +405,7 @@ body {
     bottom: 50px;
     right: 50px;
     z-index: 100;
-    display: flex;
+    display: block;
     align-items: center;
     justify-content: center;
     text-align: center;
