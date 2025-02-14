@@ -81,7 +81,6 @@ body {
   mix-blend-mode: multiply;
   pointer-events: none;
 }
-
 .tap-timeline-video-overlay::after {
   content: "";
   position: absolute;
@@ -90,10 +89,8 @@ body {
   width: 100%;
   height: 100%;
   background: #00457c10;
-  mix-blend-mode: multiply;
   pointer-events: none;
 }
-
 /* main */
 .tap-timline-top-margin {
   margin-top: var(--tap-nav-height-desktop);
