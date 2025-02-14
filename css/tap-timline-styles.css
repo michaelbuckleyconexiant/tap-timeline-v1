@@ -10,7 +10,9 @@
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
+  /* outline: 1px solid red; */
 }
+
 
 :root {
   --tap-navy: #00457c;
@@ -26,6 +28,7 @@ html {
   font-size: 16px;
   scroll-snap-type: y mandatory;
   overflow-y: scroll;
+  overflow-x: hidden;
   scroll-behavior: smooth;
   height: 100vh;
   margin: 0;
