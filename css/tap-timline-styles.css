@@ -326,8 +326,13 @@ body {
 }
 /* mobile */
 @media screen and (max-width: 800px) {
+  
+  .tap-timline-top-margin {
+    margin-top: var(--tap-nav-height-mobile);
+  }
+  
   html {
-    scroll-padding-top: 50px;
+    scroll-padding-top: var(--tap-nav-height-mobile); /* Adjust to height of tap header */
   }
   .tap-timeline-container {
     grid-template-columns: auto;
