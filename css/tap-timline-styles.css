@@ -152,7 +152,7 @@ body {
 .tap-timeline-article-container p, li {
   font-family: "Merriweather", serif;
   font-size: 1rem;
-  line-height: 1.8;
+  line-height: 1.7;
   margin: 0 0 1.4rem 0;
 }
 .tap-timeline-article-container li {
@@ -167,7 +167,7 @@ body {
   font-family: "Merriweather", serif;
   font-style: italic;
   font-size: 1rem;
-  line-height: 1.4;
+  line-height: 1.7;
   margin: 0 0 1.4rem 0;
 }
 .tap-timeline-article-container hr {
@@ -202,8 +202,8 @@ body {
   font-family: "Roboto", serif;
   color: var(--tap-teal);
   text-transform: uppercase;
-  font-size: .75rem;
-  font-weight: bold;
+  font-size: .8rem;
+  font-weight: 500;
   line-height: 1.2;
   margin: 0 0 .5rem 0;
 }
