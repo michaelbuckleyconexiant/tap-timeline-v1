@@ -71,6 +71,12 @@ body {
 .tap-timline-top-margin {
   margin-top: var(--tap-nav-height-desktop);
 }
+.tap-timeline-hero-bar-accent {
+  height: 4px;
+  width: 50px;
+  margin: 2rem 0;
+  background-color: var(--tap-teal) ;
+}
 .tap-timeline-section {
   scroll-snap-align: start;
   position: relative;
@@ -81,8 +87,7 @@ body {
   align-items: center;
   padding: 2rem 8rem;
 }
-/* Video Background */
-.tap-timeline-section-bg-video::before {
+.tap-timeline-section-bg-video::before /* Video Background */ {
   content: "";
   position: absolute;
   top: 0;
@@ -138,8 +143,8 @@ body {
   font-family: "Roboto", serif;
   color: var(--tap-teal);
   text-transform: uppercase;
-  font-size: 1rem;
-  font-weight: bold;
+  font-size: 1.2em;
+  font-weight: 500;
   line-height: 1.2;
   margin: 0 0 .5rem 0;
 }
