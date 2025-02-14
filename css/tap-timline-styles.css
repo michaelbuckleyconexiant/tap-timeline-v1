@@ -41,7 +41,6 @@ body {
   opacity: 1;
   transform: translateX(0);
 }
-<<<<<<< HEAD
 /* fixed bg image & video effect */
 .tap-timeline-section-bg-effect {
   min-height: calc(100vh - var(--tap-nav-height-desktop));
@@ -58,25 +57,6 @@ body {
   position: relative;
   width: 100%;
   min-height: calc(100vh - var(--tap-nav-height-desktop));
-=======
-
-/* fixed bg image & video effect */
-
-.tap-timeline-section-bg-effect {
-    height: 100vh; /* Full viewport height */
-    display: flex;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed; /* Parallax effect */
-}
-
-/* main */
-
-.tap-timeline-section {
-  position: relative;
-  width: 100%;
-min-height: 100vh;
->>>>>>> 054f457d795fb77d7d5cd5730fae2b6b8551c1da
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -101,15 +81,8 @@ min-height: 100vh;
   height: 100%;
   object-fit: cover;
   z-index: 0;
-<<<<<<< HEAD
   opacity: 1;
 }
-=======
-	opacity: 1;
-}
-
-
->>>>>>> 054f457d795fb77d7d5cd5730fae2b6b8551c1da
 .tap-timeline-container {
   display: grid;
   min-height: 100vh;
@@ -334,7 +307,6 @@ min-height: 100vh;
   transform: translateX(5px);
 }
 /* timeline menu */
-<<<<<<< HEAD
 .tap-timeline-aside-mobile-menu {
   display: none;
 }
@@ -349,23 +321,6 @@ min-height: 100vh;
     padding: 2rem 3rem;
   }
 }
-=======
-
-.tap-timeline-aside-mobile-menu {
-	display: none;
-}
-
-/* tablet */
-
-@media screen and (max-width: 900px) {
-	
-.tap-timeline-section {
-  padding: 2rem 3rem;
-}
-}
-
-
->>>>>>> 054f457d795fb77d7d5cd5730fae2b6b8551c1da
 /* mobile */
 @media screen and (max-width: 700px) {
   html {
@@ -377,15 +332,9 @@ min-height: 100vh;
   .tap-timeline-article-container {
     max-width: 100%;
   }
-<<<<<<< HEAD
   .tap-timeline-hero-margin {
     margin-top: var(--tap-nav-height-mobile); /* matches height of tap nav desktop */
   }
-=======
-	.tap-timeline-hero-margin {
-	margin-top: var(--tap-nav-height-mobile); /* matches height of tap nav desktop */
-}
->>>>>>> 054f457d795fb77d7d5cd5730fae2b6b8551c1da
   .tap-timeline-section {
     padding: 2rem 5%;
     min-height: calc(100vh - var(--tap-nav-height-mobile)); /* number is tap nav height  on mobile*/
@@ -404,7 +353,6 @@ min-height: 100vh;
     padding-top: 90px;
     display: none;
   }
-<<<<<<< HEAD
   .tap-timeline-article-container h1 {
     font-size: 2.0rem;
   }
@@ -441,52 +389,6 @@ min-height: 100vh;
   .tap-timeline-btn {
     font-size: .8rem;
   }
-=======
-	
-	
-	
-.tap-timeline-article-container h1 {
-  font-size: 2.0rem;
-}
-.tap-timeline-article-container h2 {
-  font-size: 1.6rem;
-}
-.tap-timeline-article-container h5 {
-  font-size: .9rem;
-}
-.tap-timeline-article-container p, li {
-  font-family: "Merriweather", serif;
-  font-size: .9rem;
-}
-.tap-timeline-article-container li {
-  list-style-type: circle;
-	margin-bottom: 0;
-}
-.tap-timeline-article-container ul {
-  padding-left: 1rem;
-  margin-bottom: 1.4rem;
-}
-.tap-timeline-article-container p.tap-timeline-author {
-  font-size: .9rem;
-}
-.tap-timeline-article-container hr {
-  display: inline-block;
-  width: 100%;
-  border: 0;
-  height: 1px;
-  background-color: #ccc;
-  margin: 1.4rem 0;
-  clear: both;
-}
-	
-	
-	.tap-timeline-btn {
-  font-size: .8rem;
-
-}
-	
-	
->>>>>>> 054f457d795fb77d7d5cd5730fae2b6b8551c1da
   .tap-timeline-aside-mobile-menu {
     position: fixed;
     width: 60px;
@@ -496,7 +398,7 @@ min-height: 100vh;
     bottom: 30px;
     right: 30px;
     z-index: 100;
-    display: block;
+    display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
