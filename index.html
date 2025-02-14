@@ -112,7 +112,7 @@ const shadow = shadowContainer.attachShadow({ mode: "open" });shadow.innerHTML =
 	<!-- demo header - delete for live site : END --> 
 	
 <!-- HERO : START -->
-<section id="top" class="tap-timeline-section tap-timeline-section-bg-video tap-timeline-hero-margin">
+<section id="top" class="tap-timeline-section tap-timeline-section-bg-video">
   <video autoplay="" loop="" style="background-image:url(&quot;https://cdn.prod.website-files.com/6772b93964a25d4bb6da8cd3%2F67a53d0ac4c7a934ee91e8b9_AdobeStock_137983601_a-poster-00001.jpg&quot;)" muted="" playsinline="" data-wf-ignore="true" data-object-fit="cover">
     <source src="https://cdn.prod.website-files.com/6772b93964a25d4bb6da8cd3%2F67a53d0ac4c7a934ee91e8b9_AdobeStock_137983601_a-transcode.mp4" data-wf-ignore="true">
     <source src="https://cdn.prod.website-files.com/6772b93964a25d4bb6da8cd3%2F67a53d0ac4c7a934ee91e8b9_AdobeStock_137983601_a-transcode.webm" data-wf-ignore="true">
@@ -302,7 +302,7 @@ const shadow = shadowContainer.attachShadow({ mode: "open" });shadow.innerHTML =
 	
 <!-- timeline mobile button -->
 
-	<button class="tap-timeline-aside-mobile-menu"><i class="fa-solid fa-timeline"></i></button>	
+	<button class="tap-timeline-aside-mobile-menu"><i class="fa-solid fa-list"></i></button>	
 	
 	
 	
@@ -327,7 +327,7 @@ document.addEventListener("DOMContentLoaded", function () {
     menuButton.addEventListener("click", function () {
         if (asidePanel.style.display === "none" || asidePanel.style.display === "") {
             asidePanel.style.display = "flex"; // Show the panel
-            icon.classList.replace("fa-timeline", "fa-xmark"); // Change to 'X' icon
+            icon.classList.replace("fa-list", "fa-xmark"); // Change to 'X' icon
         } else {
             closeMenu();
         }
@@ -343,7 +343,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function closeMenu() {
         asidePanel.style.display = "none"; // Hide the panel
-        icon.classList.replace("fa-xmark", "fa-timeline"); // Change back to timeline icon
+        icon.classList.replace("fa-xmark", "fa-list"); // Change back to timeline icon
     }
 });
 
