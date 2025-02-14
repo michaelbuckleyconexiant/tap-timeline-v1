@@ -261,12 +261,15 @@ li {
   margin: 0 0 .5rem 0;
 }
 
-.tap-timeline-aside-year {
+.tap-timeline-aside-year:link, .tap-timeline-aside-year:active, .tap-timeline-aside-year:visited, .tap-timeline-aside-year:hover {
   font-family: "Roboto", serif;
   font-weight: bold;
+  display: block;
   font-size: 1.2rem;
   line-height: 1;
   margin: 0 0 1rem 0;
+  text-decoration: none;
+  color: inherit;
 }
 
 .tap-timeline-aside-blurb {
