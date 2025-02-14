@@ -41,6 +41,17 @@ body {
   opacity: 1;
   transform: translateX(0);
 }
+
+/* fixed bg image & video effect */
+
+.tap-timeline-section-bg-effect {
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Parallax effect */
+}
+
 /* main */
 .tap-timeline-container {
   display: grid;
@@ -270,9 +281,8 @@ body {
   display: flex;
   align-items: center;
   padding: 2rem 8rem;
-/*	border-top: 1px solid #fff;*/
 }
-/* Video & Image Background */
+/* Video Background */
 .tap-timeline-section-bg-video::before {
   content: "";
   position: absolute;
@@ -292,71 +302,8 @@ body {
   object-fit: cover;
   z-index: 0;
 	opacity: 1;
-	
 }
-/* Image Background */
-.tap-timeline-section-bg-image::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: black;
-  z-index: 0;
-}
-.tap-timeline-section-bg-image img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 0;
-	opacity: 1;
-}
-
-/* video & image hero */
-
-.tap-timeline-section-bg-video::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: black;
-  z-index: 0;
-}
-.tap-timeline-section-bg-video-hero video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 0;
-}
-/* Image Background */
-.tap-timeline-section-bg-image-hero::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: black;
-  z-index: 0;
-}
-.tap-timeline-section-bg-image-hero img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 0;
-}
+/* timeline menu */
 
 .tap-timeline-aside-mobile-menu {
 	display: none;
