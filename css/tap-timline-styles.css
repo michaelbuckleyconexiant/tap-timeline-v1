@@ -16,6 +16,7 @@
   --tap-light-gray: #F5F5F5;
   --tap-nav-height-desktop: 86px;
   --tap-nav-height-mobile: 40px;
+  --tap-cool-black
   /*  --name: rgba(33, 33, 33, 0.33);*/
 }
 html {
@@ -25,6 +26,7 @@ html {
   height: 100vh; /* Ensures sections fit within the viewport */
   margin: 0;
   scroll-padding-top: var(--tap-nav-height-desktop); /* Adjust to height of tap header */
+  color: var(--tap-cool-black);
 }
 body {
   /*  background: var(--light-gray);*/
