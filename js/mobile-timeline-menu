@@ -1,0 +1,29 @@
+      document.addEventListener("DOMContentLoaded", function () {
+        const menuButton = document.querySelector(".tap-timeline-aside-mobile-menu");
+        const asidePanel = document.querySelector(".tap-timeline-aside");
+        const icon = menuButton.querySelector("i"); // Select the icon inside the button
+        const anchorTags = asidePanel.querySelectorAll("a"); // Select all anchor tags inside the aside panel
+        const mobileBreakpoint = 900; // Define the mobile breakpoint
+
+        menuButton.addEventListener("click", function () {
+          if (asidePanel.style.display === "none" || asidePanel.style.display === "") {
+            asidePanel.style.display = "flex"; // Show the panel
+            icon.classList.replace("fa-list", "fa-xmark"); // Change to 'X' icon
+          } else {
+            closeMenu();
+          }
+        });
+
+        anchorTags.forEach(anchor => {
+          anchor.addEventListener("click", function () {
+            if (window.innerWidth <= mobileBreakpoint) {
+              closeMenu(); // Close the menu only if it's on mobile
+            }
+          });
+        });
+
+        function closeMenu() {
+          asidePanel.style.display = "none"; // Hide the panel
+          icon.classList.replace("fa-xmark", "fa-list"); // Change back to timeline icon
+        }
+      });
