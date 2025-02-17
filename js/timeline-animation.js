@@ -1,10 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Prevent browser from restoring scroll position automatically
-    if ("scrollRestoration" in history) {
-        history.scrollRestoration = "manual";
-    }
-
-    function activateSection(sectionId, shouldScroll = true) {
+    function activateSection(sectionId) {
         // Ensure the ID exists
         const targetSection = document.getElementById(sectionId);
         if (!targetSection) return;
@@ -27,10 +22,8 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
 
-        // Only scroll if explicitly allowed (prevents jumping on initial load)
-        if (shouldScroll) {
-            targetSection.scrollIntoView({ behavior: "smooth", block: "start" });
-        }
+        // Smooth scrolling to the section
+        targetSection.scrollIntoView({ behavior: "smooth", block: "start" });
     }
 
     // Click event for sidebar navigation
@@ -44,16 +37,11 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // Prevent browser from auto-scrolling to anchor tags on load
+    // Activate section on page load if a hash exists
     window.addEventListener("load", function () {
         const currentHash = window.location.hash.substring(1).trim();
         if (currentHash) {
-            setTimeout(() => {
-                activateSection(currentHash, true);
-            }, 100); // Short delay to allow natural rendering
-        } else {
-            // If there's no hash, reset the scroll position to top
-            window.scrollTo(0, 0);
+            activateSection(currentHash);
         }
     });
 
@@ -69,8 +57,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const observerOptions = {
         root: null, // Observing relative to viewport
-        rootMargin: "0px", // Adjusted to prevent premature activation
-        threshold: 0.5 // Activates when at least 50% of a section is visible
+        rootMargin: "-40% 0px -40% 0px", // Triggers activation when section is roughly centered
+        threshold: 0.2 // Activates when at least 20% of a section is visible
     };
 
     const observer = new IntersectionObserver((entries) => {
@@ -97,10 +85,10 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }, observerOptions);
 
-    // Enable scroll observer (Disable this if you suspect it is causing scroll issues)
     sections.forEach(section => {
         observer.observe(section);
     });
 
     console.log("Scroll observer initialized with", sections.length, "sections.");
 });
+
