@@ -1,5 +1,4 @@
-/* The ASCO Post Timeline Styles */
-
+/* The ASCO Post timeline styles */
 
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
@@ -123,7 +122,7 @@ body {
 
 .tap-timeline-section-bg-video::before
 
-/* Video Background */
+/* video background */
   {
   content: "";
   position: absolute;
@@ -236,7 +235,6 @@ li {
   flex-direction: column;
   position: sticky;
   top: var(--tap-nav-height-desktop);
-  /* height of tap nav desktop */
   height: fit-content;
 }
 
@@ -417,12 +415,11 @@ li {
   transform: translateX(5px);
 }
 
-/* timeline menu */
 .tap-timeline-aside-mobile-menu {
   display: none;
 }
 
-/* tablet */
+/******************** tablet ********************/
 @media screen and (max-width: 1200px) {
   .tap-timeline-section {
     padding: 3rem 3rem;
@@ -435,7 +432,7 @@ li {
   }
 }
 
-/* mobile */
+/******************** mobile ********************/
 @media screen and (max-width: 800px) {
 
 
@@ -450,7 +447,6 @@ li {
 
   html {
     scroll-padding-top: var(--tap-nav-height-mobile);
-    /* Adjust to height of tap header */
   }
 
   .tap-timeline-container {
@@ -465,13 +461,11 @@ li {
 
   .tap-timeline-hero-margin {
     margin-top: var(--tap-nav-height-mobile);
-    /* matches height of tap nav desktop */
   }
 
   .tap-timeline-section {
     padding: 2rem 5%;
     min-height: calc(100vh - var(--tap-nav-height-mobile));
-    /* number is tap nav height  on mobile*/
   }
 
   .tap-timeline-aside {
@@ -480,7 +474,6 @@ li {
     flex-direction: column;
     position: fixed;
     top: var(--tap-nav-height-mobile);
-    /* height of tap nav on mobile */
     height: fit-content;
     z-index: 3;
     background: #fff;
@@ -582,4 +575,4 @@ li {
   }
 }
 
-/* THE END */
+/******************** THE END ********************/
