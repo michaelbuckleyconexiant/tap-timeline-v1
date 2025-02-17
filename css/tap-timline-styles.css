@@ -13,7 +13,6 @@
   /* outline: 1px solid red; */
 }
 
-
 :root {
   --tap-navy: #00457c;
   --tap-teal: #00b3bb;
@@ -39,6 +38,7 @@ html {
   overflow-x: hidden;
   scroll-padding-top: var(--tap-nav-height-desktop);
 }
+
 body {
   height: 100vh;
 }
@@ -48,6 +48,7 @@ body {
   transform: translateX(-50px);
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
+
 .fade-in-left.visible {
   opacity: 1;
   transform: translateX(0);
