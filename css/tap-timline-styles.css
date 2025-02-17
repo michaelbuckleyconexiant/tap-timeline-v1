@@ -81,19 +81,8 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.35);
+  background: rgba(0, 0, 0, 0.40);
   /* mix-blend-mode: multiply; */
-  pointer-events: none;
-}
-
-.tap-timeline-video-overlay::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.35);
   pointer-events: none;
 }
 
