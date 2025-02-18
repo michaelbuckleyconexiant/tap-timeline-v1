@@ -407,28 +407,6 @@
 
 </script>
 
-
-<script>
-
-
-window.addEventListener('scroll', function() {
-  const mobileMenu = document.querySelector('.tap-timeline-aside-mobile-menu');
-  const scrollPosition = window.scrollY;
-
-  // Adjust this value (e.g., 100, 200) to control how far down the user needs to scroll
-  // before the menu appears.  Lower numbers mean it appears sooner.
-  const scrollThreshold = 100; 
-
-  if (scrollPosition > scrollThreshold) {
-    mobileMenu.style.opacity = 1;
-    mobileMenu.style.visibility = 'visible';
-  } else {
-    mobileMenu.style.opacity = 0;
-    mobileMenu.style.visibility = 'hidden';
-  }
-});
-</script>
-
 </body>
 
 </html>
