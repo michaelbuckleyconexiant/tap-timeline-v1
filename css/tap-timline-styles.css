@@ -16,6 +16,7 @@
   --tap-navy: #00457c;
   --tap-teal: #00b3bb;
   --tap-light-gray: #F5F5F5;
+  --tap-dark-gray: #676767;
   --tap-nav-height-desktop: 86px;
   --tap-nav-height-mobile: 40px;
   --tap-cool-black
@@ -24,7 +25,6 @@
 
 html {
   font-size: 16px;
-  /* overflow-y: scroll; */
   scroll-behavior: smooth;
   margin: 0;
   color: var(--tap-cool-black);
@@ -56,13 +56,23 @@ body {
 .fade-in-right {
   opacity: 0;
   transform: translateX(50px);
-  /* Move from the right */
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
 .fade-in-right.visible {
   opacity: 1;
   transform: translateX(0);
+}
+
+.fade-in-bottom {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: opacity 0.9s ease-out 0.9s, transform 0.9s ease-out 0.9s;
+}
+
+.fade-in-bottom.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* fixed bg image & video effect */
@@ -95,7 +105,7 @@ body {
   height: 4px;
   width: 50px;
   margin: 2rem 0;
-  background-color: var(--tap-teal);
+  background-color: var(--tap-dark-gray);
 }
 
 .tap-timeline-section {
@@ -133,7 +143,6 @@ body {
   z-index: 0;
   opacity: 1;
 }
-
 .tap-timeline-container {
   display: grid;
   min-height: 100vh;
@@ -141,12 +150,24 @@ body {
   background: #fff;
   grid-template-columns: auto 300px;
 }
-
 .tap-timeline-main {
   display: block;
   height: auto;
 }
-
+.tap-timeline-article-wrapper {
+  max-width: 900px;
+  width: 100%;
+  display: grid;
+  margin: 0 auto;
+  height: auto;
+}
+.tap-timeline-article-wrapper-hero {
+  max-width: 1270px;
+  width: 100%;
+  display: grid;
+  margin: 0 auto;
+  height: auto;
+}
 .tap-timeline-article-container {
   position: relative;
   z-index: 1;
@@ -173,7 +194,7 @@ body {
 
 .tap-timeline-article-container h5 {
   font-family: "Roboto", serif;
-  color: var(--tap-teal);
+  color: var(--tap-dark-gray);
   text-transform: uppercase;
   font-size: 1.2em;
   font-weight: 500;
@@ -244,7 +265,7 @@ li {
 
 .tap-timeline-aside h5 {
   font-family: "Roboto", serif;
-  color: var(--tap-teal);
+  color: var(--tap-dark-gray);
   text-transform: uppercase;
   font-size: .8rem;
   font-weight: 500;
@@ -274,20 +295,35 @@ li {
 }
 
 .tap-timeline-aside-blurb.active-text {
-  color: var(--tap-teal);
+  color: var(--tap-dark-gray);
   font-weight: bold;
+  position: relative;
+
 }
 
+.tap-timeline-aside-blurb.active-text::before {
+  content: "";
+  position: absolute;
+  left: -32px;
+  top: 60%;
+  transform: translateY(-50%);
+  width: 5px;
+  height: 20px;
+  border-radius: 10px;
+  ;
+  background-color: #999;
+}
 .tap-timeline-aside-blurb p {
   font-family: "Roboto", serif;
   font-weight: normal;
   font-size: 1rem;
   line-height: 1.3;
   margin: 0 0 1rem 0;
+  position: relative;
 }
 
 .tap-timeline-aside-blurb p:hover {
-  color: var(--tap-teal);
+  color: var(--tap-dark-gray);
   transition: all 250ms;
 }
 
@@ -335,21 +371,23 @@ li {
   height: 100%;
   transition: background-color 0.5s ease-in-out, height 0.5s ease-in-out;
   position: relative;
+  border-radius: 10px;
 }
 
 .tap-timeline-aside-section:last-of-type .tap-timeline-aside-line {
-  display: none;
+  /* display: none; */
+  height: 40%;
 }
 
 /* graphic elements */
 .tap-timeline-down-arrow-btn {
   height: 40px;
   width: 40px;
-  border: solid 2px var(--tap-teal);
+  border: solid 2px var(--tap-dark-gray);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--tap-teal);
+  color: var(--tap-dark-gray);
   text-decoration: none;
   border-radius: 50px;
   font-size: 20px;
@@ -359,7 +397,7 @@ li {
 
 .tap-timeline-down-arrow-btn:hover {
   color: #fff;
-  background-color: var(--tap-teal);
+  background-color: var(--tap-dark-gray);
 }
 
 .tap-timeline-down-arrow-btn i {
@@ -371,11 +409,11 @@ li {
 }
 
 .tap-timeline-btn {
-  border: solid 2px var(--tap-teal);
+  border: solid 2px var(--tap-dark-gray);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--tap-teal);
+  color: var(--tap-dark-gray);
   text-decoration: none;
   border-radius: 6px;
   font-size: 20px;
@@ -388,11 +426,13 @@ li {
   float: left;
   padding: .5rem 1.5rem;
   text-transform: uppercase;
+  min-height: 50px;
+  ;
 }
 
 .tap-timeline-btn:hover {
   color: #fff;
-  background-color: var(--tap-teal);
+  background-color: var(--tap-dark-gray);
 }
 
 .tap-timeline-btn i {
@@ -425,6 +465,13 @@ li {
 @media screen and (max-width: 800px) {
 
 
+  .center-hero-bg {
+    background-position: 70% top;
+  }
+  .move-article-hero-down {
+margin-top: 400px;
+  }
+
   .scroll-container {
     scroll-snap-type: none;
     scroll-padding-top: var(--tap-nav-height-mobile);
@@ -437,7 +484,6 @@ li {
   html {
     scroll-padding-top: var(--tap-nav-height-mobile);
   }
-
   .tap-timeline-container {
     grid-template-columns: auto;
   }
@@ -503,7 +549,6 @@ li {
   .tap-timeline-article-container p.tap-timeline-author {
     font-size: .9rem;
   }
-
   .tap-timeline-article-container hr {
     display: inline-block;
     width: 100%;
@@ -522,10 +567,10 @@ li {
     position: fixed;
     width: 60px;
     height: 60px;
-    border-radius: 100px;
-    background-color: var(--tap-teal);
-    bottom: 30px;
-    right: 30px;
+    border-radius: 5px 0px 0px 5px;
+    background-color: var(--tap-navy);
+    bottom: 10%;
+    right: 0px;
     z-index: 100;
     display: flex;
     align-items: center;
@@ -535,21 +580,6 @@ li {
     box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.5);
     border: none;
     transition: all 250ms;
-    animation: pulse 2s infinite ease-in-out;
-  }
-
-  @keyframes pulse {
-    0% {
-      transform: scale(1);
-    }
-
-    50% {
-      transform: scale(1.1);
-    }
-
-    100% {
-      transform: scale(1);
-    }
   }
 
   .tap-timeline-aside-mobile-menu i {
