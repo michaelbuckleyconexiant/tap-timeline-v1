@@ -310,8 +310,10 @@ li {
   width: 5px;
   height: 20px;
   border-radius: 10px;
-  ;
   background-color: #999;
+}
+.tap-timeline-aside-blurb:hover::before {
+  background-color: var(--tap-teal);
 }
 .tap-timeline-aside-blurb p {
   font-family: "Roboto", serif;
@@ -323,7 +325,7 @@ li {
 }
 
 .tap-timeline-aside-blurb p:hover {
-  color: var(--tap-dark-gray);
+  color: var(--tap-teal);
   transition: all 250ms;
 }
 
