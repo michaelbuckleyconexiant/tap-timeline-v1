@@ -1,63 +1,53 @@
 document.addEventListener("DOMContentLoaded", function () {
   const menuButton = document.querySelector(".tap-timeline-aside-mobile-menu");
   const asidePanel = document.querySelector(".tap-timeline-aside");
-  const icon = menuButton.querySelector("i"); // Select the icon inside the button
-  const anchorTags = asidePanel.querySelectorAll("a"); // Select all anchor tags inside the aside panel
-  const mobileBreakpoint = 800; // Define the mobile breakpoint
-  const scrollThreshold = 300; // Adjust scroll value as needed
+  const icon = menuButton.querySelector("i");
+  const anchorTags = asidePanel.querySelectorAll("a");
+  const mobileBreakpoint = 800;
+  const scrollThreshold = 300;
 
-  if (!menuButton) {
-    console.error("Error: .tap-timeline-aside-mobile-menu not found in DOM");
+  if (!menuButton || !asidePanel) {
+    console.error("Error: Required elements not found in DOM");
     return;
   }
 
-  // Function to show/hide menu button on scroll
-  function toggleMenuVisibility() {
-    console.log("Scroll position:", window.scrollY); // Debugging output
+  // Hide menu button initially with !important
+  menuButton.style.cssText = "display: none !important;";
 
+  // Function to show the menu button after scrolling
+  function toggleMenuVisibility() {
     if (window.scrollY > scrollThreshold) {
-      console.log("Adding show-menu class"); // Debugging output
-      menuButton.classList.add("show-menu");
+      menuButton.style.cssText = "display: block !important;"; // Show menu button
     } else {
-      console.log("Removing show-menu class"); // Debugging output
-      menuButton.classList.remove("show-menu");
+      menuButton.style.cssText = "display: none !important;"; // Hide menu button
     }
   }
 
-  // Attach scroll event listener
   window.addEventListener("scroll", toggleMenuVisibility);
 
   // Menu toggle functionality
   menuButton.addEventListener("click", function () {
-    if (asidePanel.style.display === "none" || asidePanel.style.display === "") {
-      asidePanel.style.display = "flex"; // Show the panel
-      icon.classList.replace("fa-list", "fa-xmark"); // Change to 'X' icon
-    } else {
-      closeMenu();
-    }
+    asidePanel.style.display = asidePanel.style.display === "none" ? "flex" : "none";
+    icon.classList.toggle("fa-list");
+    icon.classList.toggle("fa-xmark");
   });
 
   // Close menu when clicking a link on mobile
   anchorTags.forEach(anchor => {
     anchor.addEventListener("click", function () {
       if (window.innerWidth <= mobileBreakpoint) {
-        closeMenu(); // Close the menu only if it's on mobile
+        asidePanel.style.display = "none";
+        icon.classList.add("fa-list");
+        icon.classList.remove("fa-xmark");
       }
     });
   });
 
-  // Function to close the menu
-  function closeMenu() {
-    asidePanel.style.display = "none"; // Hide the panel
-    icon.classList.replace("fa-xmark", "fa-list"); // Change back to timeline icon
-  }
-
   // Adjust menu visibility on resize
   window.addEventListener("resize", function () {
-    if (window.innerWidth > mobileBreakpoint) {
-      asidePanel.style.display = "flex"; // Ensure the menu is visible
-    } else {
-      asidePanel.style.display = "none"; // Hide the menu
-    }
+    asidePanel.style.display = window.innerWidth > mobileBreakpoint ? "flex" : "none";
   });
+
+  // Ensure menu starts hidden and only appears after scrolling
+  toggleMenuVisibility();
 });
