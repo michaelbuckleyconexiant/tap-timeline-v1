@@ -35,7 +35,7 @@ html {
   }
 }
 .hero-fade-in {
-  opacity: 0; /* Start hidden */
+  opacity: 0; 
   animation: fadeIn 1s ease-out .75s forwards;
 }
 .scroll-container {
@@ -435,8 +435,8 @@ body {
   border: none;
   transition: all 250ms;
 }
-.trigger-mobile-menu {
-  display: none !important;
+#trigger-mobile-menu {
+
 }
 .sticky-menu {
   position: fixed;
@@ -447,14 +447,11 @@ body {
   height: 60px;
   background: rgba(0, 0, 0, 0);
   opacity: 0;
-  /* Fully hidden by default */
   transition: opacity 0.3s ease-in-out;
   pointer-events: none;
-  /* Prevent interaction when hidden */
 }
 .sticky-menu.visible {
   opacity: 1;
-  /* Show when triggered */
   pointer-events: auto;
 }
 /******************** tablet ********************/
