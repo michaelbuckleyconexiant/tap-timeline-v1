@@ -143,10 +143,14 @@
     </section>
     <!-- hero : END -->
 
-
-      <button class="tap-timeline-aside-mobile-menu"><i class="fa-solid fa-list"></i></button>
-
+<!-- make mobile menu appear after scroll -->
     <div id="trigger-mobile-menu"></div>
+    <div class="sticky-menu">
+      <button class="tap-timeline-aside-mobile-menu">
+        <i class="fa-solid fa-list"></i>
+      </button>
+    </div>
+
 
     <!-- timeline container : START -->
     <div class="tap-timeline-container">
@@ -402,7 +406,34 @@
   <script src="js/animation-fade.js"></script>
 
 
-</script>
+
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      let stickyMenu = document.querySelector(".sticky-menu");
+      let trigger = document.querySelector("#trigger-mobile-menu");
+
+      let observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            let triggerPosition = trigger.getBoundingClientRect().top;
+
+            if (triggerPosition <= 0) {
+              stickyMenu.classList.add("visible");
+            } else {
+              stickyMenu.classList.remove("visible");
+            }
+          });
+        },
+        { threshold: 0 } // Ensures it only triggers when reaching the top
+      );
+
+      observer.observe(trigger);
+    });
+
+
+  </script>
+
 
 </body>
 
