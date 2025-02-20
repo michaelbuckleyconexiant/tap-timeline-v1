@@ -123,26 +123,25 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Sticky Menu Functionality
-    let stickyMenu = document.querySelector(".sticky-menu");
-    let trigger = document.querySelector("#trigger-mobile-menu");
+// Sticky Menu Functionality
+let stickyMenu = document.querySelector(".sticky-menu");
+let trigger = document.querySelector("#trigger-mobile-menu");
 
-    let stickyObserver = new IntersectionObserver(
-        (entries) => {
-            entries.forEach((entry) => {
-                let triggerPosition = trigger.getBoundingClientRect().top;
+let stickyObserver = new IntersectionObserver(
+    (entries) => {
+        entries.forEach((entry) => {
+            if (entry.intersectionRatio > 0) {  // Element is in view
+                stickyMenu.classList.add("visible");
+            } else {  // Element is out of view
+                stickyMenu.classList.remove("visible");
+            }
+        });
+    },
+    { threshold: 0.1 } // Adjust this to control how much needs to be visible
+);
 
-                if (triggerPosition <= 0) {
-                    stickyMenu.classList.add("visible");
-                } else {
-                    stickyMenu.classList.remove("visible");
-                }
-            });
-        },
-        { threshold: 0 }
-    );
+stickyObserver.observe(trigger);
 
-    stickyObserver.observe(trigger);
 });
 
 //WORKING

@@ -50,7 +50,7 @@ html {
   will-change: transform;
 }
 body {
-  height: 100vh;
+/*  height: 100vh;*/
 }
 .fade-in-left {
   opacity: 0;
