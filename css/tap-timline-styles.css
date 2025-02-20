@@ -1,7 +1,5 @@
 /* The ASCO Post timeline styles */
-
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -11,7 +9,6 @@
   scroll-behavior: smooth;
   /* outline: 1px solid red; */
 }
-
 :root {
   --tap-navy: #00457c;
   --tap-teal: #00b3bb;
@@ -19,17 +16,28 @@
   --tap-dark-gray: #676767;
   --tap-nav-height-desktop: 86px;
   --tap-nav-height-mobile: 40px;
-  --tap-cool-black
-  /*  --name: rgba(33, 33, 33, 0.33);*/
+  --tap-cool-black /*  --name: rgba(33, 33, 33, 0.33);*/
 }
-
 html {
   font-size: 16px;
   scroll-behavior: smooth;
   margin: 0;
   color: var(--tap-cool-black);
 }
-
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.hero-fade-in {
+  opacity: 0; /* Start hidden */
+  animation: fadeIn 1s ease-out .75s forwards;
+}
 .scroll-container {
   scroll-snap-type: y mandatory;
   /* overflow-y: scroll; */
@@ -37,44 +45,36 @@ html {
   overflow-x: hidden;
   scroll-padding-top: var(--tap-nav-height-desktop);
 }
-
 body {
   height: 100vh;
 }
-
 .fade-in-left {
   opacity: 0;
   transform: translateX(-50px);
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
-
 .fade-in-left.visible {
   opacity: 1;
   transform: translateX(0);
 }
-
 .fade-in-right {
   opacity: 0;
   transform: translateX(50px);
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
-
 .fade-in-right.visible {
   opacity: 1;
   transform: translateX(0);
 }
-
 .fade-in-bottom {
   opacity: 0;
   transform: translateY(100px);
   transition: opacity 0.6s ease-out 0.6s, transform 0.6s ease-out 0.6s;
 }
-
 .fade-in-bottom.visible {
   opacity: 1;
   transform: translateY(0);
 }
-
 /* fixed bg image & video effect */
 .tap-timeline-section-bg-effect {
   min-height: calc(100vh - var(--tap-nav-height-desktop));
@@ -83,7 +83,6 @@ body {
   background-position: center;
   background-attachment: fixed;
 }
-
 .tap-timeline-section-bg-effect::after {
   content: "";
   position: absolute;
@@ -95,19 +94,16 @@ body {
   /* mix-blend-mode: multiply; */
   pointer-events: none;
 }
-
 /* main */
 .tap-timline-top-margin {
   margin-top: var(--tap-nav-height-desktop);
 }
-
 .tap-timeline-hero-bar-accent {
   height: 4px;
   width: 50px;
   margin: 2rem 0;
   background-color: var(--tap-dark-gray);
 }
-
 .tap-timeline-section {
   scroll-snap-align: start;
   position: relative;
@@ -118,11 +114,7 @@ body {
   align-items: center;
   padding: 2rem 8rem;
 }
-
-.tap-timeline-section-bg-video::before
-
-/* video background */
-  {
+.tap-timeline-section-bg-video::before /* video background */ {
   content: "";
   position: absolute;
   top: 0;
@@ -132,7 +124,6 @@ body {
   background: black;
   z-index: 0;
 }
-
 .tap-timeline-section-bg-video video {
   position: absolute;
   top: 0;
@@ -143,7 +134,6 @@ body {
   z-index: 0;
   opacity: 1;
 }
-
 .tap-timeline-container {
   display: grid;
   min-height: 100vh;
@@ -151,12 +141,10 @@ body {
   background: #fff;
   grid-template-columns: auto 300px;
 }
-
 .tap-timeline-main {
   display: block;
   height: auto;
 }
-
 .tap-timeline-article-wrapper {
   max-width: 900px;
   width: 100%;
@@ -164,7 +152,6 @@ body {
   margin: 0 auto;
   height: auto;
 }
-
 .tap-timeline-article-wrapper-hero {
   max-width: 1270px;
   width: 100%;
@@ -172,7 +159,6 @@ body {
   margin: 0 auto;
   height: auto;
 }
-
 .tap-timeline-article-container {
   position: relative;
   z-index: 1;
@@ -182,21 +168,18 @@ body {
   box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.5);
   max-width: 700px;
 }
-
 .tap-timeline-article-container h1 {
   font-family: "Roboto", serif;
   font-size: 3.0rem;
   line-height: 1.1;
   margin: 0 0 1rem 0;
 }
-
 .tap-timeline-article-container h2 {
   font-family: "Roboto", serif;
   font-size: 2.2rem;
   line-height: 1.2;
   margin: 0 0 1rem 0;
 }
-
 .tap-timeline-article-container h5 {
   font-family: "Roboto", serif;
   color: var(--tap-dark-gray);
@@ -206,25 +189,20 @@ body {
   line-height: 1.2;
   margin: 0 0 .5rem 0;
 }
-
-.tap-timeline-article-container p,
-li {
+.tap-timeline-article-container p, li {
   font-family: "Merriweather", serif;
   font-size: 1rem;
   line-height: 1.7;
   margin: 0 0 1.4rem 0;
 }
-
 .tap-timeline-article-container li {
   list-style-type: circle;
   margin-bottom: 0;
 }
-
 .tap-timeline-article-container ul {
   padding-left: 1rem;
   margin-bottom: 1.4rem;
 }
-
 .tap-timeline-article-container p.tap-timeline-author {
   font-family: "Merriweather", serif;
   font-style: italic;
@@ -232,7 +210,6 @@ li {
   line-height: 1.7;
   margin: 0 0 1.4rem 0;
 }
-
 .tap-timeline-article-container hr {
   display: inline-block;
   width: 100%;
@@ -242,7 +219,6 @@ li {
   margin: 1.4rem 0;
   clear: both;
 }
-
 /* timeline sidebar */
 .tap-timeline-aside {
   padding: 3rem 2rem 2rem 2rem;
@@ -254,22 +230,16 @@ li {
   top: var(--tap-nav-height-desktop);
   height: fit-content;
 }
-
 .tap-timeline-aside h3 {
   font-family: "Roboto", serif;
   font-size: 1.4rem;
   line-height: 1.2;
   margin: 0 0 3rem 0;
 }
-
-.tap-timeline-aside h3 a,
-.tap-timeline-aside h3 a:active,
-.tap-timeline-aside h3 a:hover,
-.tap-timeline-aside h3 a:visited {
+.tap-timeline-aside h3 a, .tap-timeline-aside h3 a:active, .tap-timeline-aside h3 a:hover, .tap-timeline-aside h3 a:visited {
   color: inherit;
   text-decoration: none;
 }
-
 .tap-timeline-aside h5 {
   font-family: "Roboto", serif;
   color: var(--tap-dark-gray);
@@ -279,11 +249,7 @@ li {
   line-height: 1.2;
   margin: 0 0 .5rem 0;
 }
-
-.tap-timeline-aside-year:link,
-.tap-timeline-aside-year:active,
-.tap-timeline-aside-year:visited,
-.tap-timeline-aside-year:hover {
+.tap-timeline-aside-year:link, .tap-timeline-aside-year:active, .tap-timeline-aside-year:visited, .tap-timeline-aside-year:hover {
   font-family: "Roboto", serif;
   font-weight: bold;
   display: block;
@@ -293,21 +259,17 @@ li {
   text-decoration: none;
   color: inherit;
 }
-
 .tap-timeline-aside-blurb {
   text-decoration: none;
   color: black;
   transition: color 0.3s ease;
   color: inherit;
 }
-
 .tap-timeline-aside-blurb.active-text {
   color: var(--tap-teal);
   font-weight: bold;
   position: relative;
-
 }
-
 .tap-timeline-aside-blurb.active-text::before {
   content: "";
   position: absolute;
@@ -319,11 +281,9 @@ li {
   border-radius: 10px;
   background-color: var(--tap-teal);
 }
-
 .tap-timeline-aside-blurb:hover::before {
   background-color: var(--tap-teal);
 }
-
 .tap-timeline-aside-blurb p::before {
   content: "";
   position: absolute;
@@ -337,12 +297,9 @@ li {
   opacity: 0; /* Start hidden */
   transition: opacity 0.3s ease-in-out; /* Smooth transition */
 }
-
 .tap-timeline-aside-blurb p:hover::before {
   opacity: 1; /* Fade in on hover */
 }
-
-
 .tap-timeline-aside-blurb p {
   font-family: "Roboto", serif;
   font-weight: normal;
@@ -351,23 +308,19 @@ li {
   margin: 0 0 1rem 0;
   position: relative;
 }
-
 .tap-timeline-aside-blurb p:hover {
   color: var(--tap-teal);
   transition: all 250ms;
 }
-
 .tap-timeline-aside-blurb:last-child p {
   margin: 0 0 2rem 0;
 }
-
 .tap-timeline-aside-section {
   display: grid;
   width: 100%;
   grid-template-columns: 20px auto;
   grid-gap: 20px;
 }
-
 .tap-timeline-dot-line-container {
   position: relative;
   display: flex;
@@ -375,7 +328,6 @@ li {
   align-items: center;
   width: 20px;
 }
-
 .tap-timeline-aside-dot {
   width: 20px;
   height: 20px;
@@ -385,16 +337,13 @@ li {
   border: solid 3px var(--tap-teal);
   text-decoration: none;
 }
-
 .tap-timeline-aside-dot:hover {
   background-color: var(--tap-teal);
   transition: all 250ms;
 }
-
 .tap-timeline-aside-dot.active-dot {
   background-color: var(--tap-teal);
 }
-
 .tap-timeline-aside-line {
   width: 5px;
   background-color: #efefef;
@@ -403,12 +352,10 @@ li {
   position: relative;
   border-radius: 10px;
 }
-
 .tap-timeline-aside-section:last-of-type .tap-timeline-aside-line {
   /* display: none; */
   height: 40%;
 }
-
 /* graphic elements */
 .tap-timeline-down-arrow-btn {
   height: 40px;
@@ -424,20 +371,16 @@ li {
   transition: all 0.3s ease-in-out;
   overflow: hidden;
 }
-
 .tap-timeline-down-arrow-btn:hover {
   color: #fff;
   background-color: var(--tap-dark-gray);
 }
-
 .tap-timeline-down-arrow-btn i {
   transition: transform 0.3s ease-in-out;
 }
-
 .tap-timeline-down-arrow-btn:hover i {
   transform: translateY(5px);
 }
-
 .tap-timeline-btn {
   border: solid 2px var(--tap-dark-gray);
   display: flex;
@@ -459,22 +402,17 @@ li {
   min-height: 50px;
   ;
 }
-
 .tap-timeline-btn:hover {
   color: #fff;
   background-color: var(--tap-dark-gray);
 }
-
 .tap-timeline-btn i {
   transition: transform 0.3s ease-in-out;
   margin-left: .5rem
 }
-
 .tap-timeline-btn:hover i {
   transform: translateX(5px);
 }
-
-
 .tap-timeline-aside-mobile-menu {
   position: fixed;
   width: 60px;
@@ -493,11 +431,9 @@ li {
   border: none;
   transition: all 250ms;
 }
-
 .trigger-mobile-menu {
   display: none !important;
 }
-
 .sticky-menu {
   position: fixed;
   bottom: 8%;
@@ -512,33 +448,27 @@ li {
   pointer-events: none;
   /* Prevent interaction when hidden */
 }
-
 .sticky-menu.visible {
   opacity: 1;
   /* Show when triggered */
   pointer-events: auto;
 }
-
 /******************** tablet ********************/
 @media screen and (max-width: 1200px) {
   .tap-timeline-section {
     padding: 3rem 3rem;
   }
 }
-
 @media screen and (max-width: 900px) {
   .tap-timeline-section {
     padding: 2rem 3rem;
   }
 }
-
 /******************** mobile ********************/
 @media screen and (max-width: 800px) {
-
   .tap-timeline-aside-mobile-menu {
     display: block;
   }
-
   .tap-timeline-aside-inner {
     width: 75%;
     height: 100%;
@@ -546,9 +476,7 @@ li {
     padding: 3rem 2rem 2rem 2rem;
     right: 0;
     position: fixed;
-
   }
-
   .tap-timeline-aside {
     transform: translateX(100%);
     display: none;
@@ -560,86 +488,66 @@ li {
     top: 0;
     width: 100%;
     height: 100%;
-}
-
-.tap-timeline-aside.open {
+  }
+  .tap-timeline-aside.open {
     transform: translateX(0);
-display: flex;
-}
-
-
+    display: flex;
+  }
   .center-hero-bg {
     background-position: 70% top;
   }
-
   .move-article-hero-down {
     margin-top: 400px;
   }
-
   .scroll-container {
     scroll-snap-type: none;
     scroll-padding-top: var(--tap-nav-height-mobile);
   }
-
   .tap-timline-top-margin {
     margin-top: var(--tap-nav-height-mobile);
   }
-
   html {
     scroll-padding-top: var(--tap-nav-height-mobile);
   }
-
   .tap-timeline-container {
     grid-template-columns: auto;
   }
-
   .tap-timeline-article-container {
     max-width: 100%;
     padding: 2rem;
     ;
   }
-
   .tap-timeline-hero-margin {
     margin-top: var(--tap-nav-height-mobile);
   }
-
   .tap-timeline-section {
     padding: 2rem 5%;
     min-height: calc(100vh - var(--tap-nav-height-mobile));
   }
-
   .tap-timeline-article-container h1 {
     font-size: 2.0rem;
   }
-
   .tap-timeline-article-container h2 {
     font-size: 1.6rem;
   }
-
   .tap-timeline-article-container h5 {
     font-size: .9rem;
   }
-
-  .tap-timeline-article-container p,
-  li {
+  .tap-timeline-article-container p, li {
     font-family: "Merriweather", serif;
     font-size: .9rem;
   }
-
   .tap-timeline-article-container li {
     list-style-type: circle;
     margin-bottom: 0;
   }
-
   .tap-timeline-article-container ul {
     padding-left: 1rem;
     margin-bottom: 1.4rem;
   }
-
   .tap-timeline-article-container p.tap-timeline-author {
     font-size: .9rem;
   }
-
   .tap-timeline-article-container hr {
     display: inline-block;
     width: 100%;
@@ -649,21 +557,17 @@ display: flex;
     margin: 1.4rem 0;
     clear: both;
   }
-
   .tap-timeline-btn {
     font-size: .8rem;
   }
-
   .tap-timeline-aside-mobile-menu i {
     color: #fff;
     font-size: 20px;
   }
-
   .tap-timeline-aside-mobile-menu:hover {
     cursor: pointer;
     background-color: var(--tap-navy);
     transition: all 250ms;
   }
 }
-
 /******************** THE END ********************/
