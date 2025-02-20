@@ -126,21 +126,37 @@ document.addEventListener("DOMContentLoaded", function () {
 // Sticky Menu Functionality
 let stickyMenu = document.querySelector(".sticky-menu");
 let trigger = document.querySelector("#trigger-mobile-menu");
+let hasAppeared = false;
 
 let stickyObserver = new IntersectionObserver(
     (entries) => {
         entries.forEach((entry) => {
-            if (entry.intersectionRatio > 0) {  // Element is in view
-                stickyMenu.classList.add("visible");
-            } else {  // Element is out of view
+            if (entry.isIntersecting) {  
+                stickyMenu.classList.add("visible"); 
+                hasAppeared = true; // Keep it visible once triggered
+            } else if (entry.boundingClientRect.top > window.innerHeight) {
+                // Hide when trigger moves completely below viewport
                 stickyMenu.classList.remove("visible");
+                hasAppeared = false;
             }
         });
     },
-    { threshold: 0.1 } // Adjust this to control how much needs to be visible
+    { threshold: 0.1 }
 );
 
 stickyObserver.observe(trigger);
+
+// Ensure sticky-menu starts hidden
+stickyMenu.classList.remove("visible");
+
+// Prevent it from disappearing when the trigger scrolls past the top
+window.addEventListener("scroll", () => {
+    if (hasAppeared) {
+        stickyMenu.classList.add("visible");
+    }
+});
+
+
 
 });
 
