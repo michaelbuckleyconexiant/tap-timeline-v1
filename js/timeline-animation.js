@@ -26,6 +26,10 @@ document.addEventListener("DOMContentLoaded", function () {
       targetSection.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 
+  // Sidebar elements
+  const menuButton = document.querySelector(".tap-timeline-aside-mobile-menu");
+  const sidebar = document.querySelector(".tap-timeline-aside");
+
   // Click event for sidebar navigation
   document.body.addEventListener("click", function (event) {
       const link = event.target.closest("a[href^='#']");
@@ -34,6 +38,11 @@ document.addEventListener("DOMContentLoaded", function () {
           const targetId = link.getAttribute("href").substring(1).trim();
           activateSection(targetId);
           history.pushState(null, "", `#${targetId}`);
+
+          // Close sidebar when a section link is clicked (only on mobile)
+          if (window.innerWidth <= 800 && sidebar) {
+              sidebar.classList.remove("open");
+          }
       }
   });
 
@@ -47,8 +56,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Scroll Detection for Active State
   const sections = document.querySelectorAll(".tap-timeline-section"); // Select all timeline sections
-  const dots = document.querySelectorAll(".tap-timeline-aside-dot");
-  const blurbs = document.querySelectorAll(".tap-timeline-aside-blurb");
 
   if (sections.length === 0) {
       console.warn("No .tap-timeline-section elements found!");
@@ -90,4 +97,20 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   console.log("Scroll observer initialized with", sections.length, "sections.");
+
+  // Sidebar toggle functionality
+  if (menuButton && sidebar) {
+      menuButton.addEventListener("click", function () {
+          sidebar.classList.toggle("open");
+      });
+
+      // Close sidebar when clicking outside of it
+      document.addEventListener("click", function (event) {
+          if (!sidebar.contains(event.target) && !menuButton.contains(event.target)) {
+              sidebar.classList.remove("open");
+          }
+      });
+  }
 });
+
+// working code
