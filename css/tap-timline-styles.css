@@ -324,6 +324,25 @@ li {
   background-color: var(--tap-teal);
 }
 
+.tap-timeline-aside-blurb p::before {
+  content: "";
+  position: absolute;
+  left: -32px;
+  top: 60%;
+  transform: translateY(-50%);
+  width: 5px;
+  height: 20px;
+  border-radius: 10px;
+  background-color: var(--tap-teal);
+  opacity: 0; /* Start hidden */
+  transition: opacity 0.3s ease-in-out; /* Smooth transition */
+}
+
+.tap-timeline-aside-blurb p:hover::before {
+  opacity: 1; /* Fade in on hover */
+}
+
+
 .tap-timeline-aside-blurb p {
   font-family: "Roboto", serif;
   font-weight: normal;
