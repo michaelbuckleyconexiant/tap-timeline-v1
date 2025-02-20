@@ -81,7 +81,7 @@ body {
 }
 /* fixed bg image & video effect */
 .tap-timeline-section-bg-effect {
-  min-height: calc(100vh - var(--tap-nav-height-desktop));
+/*  min-height: calc(100vh - var(--tap-nav-height-desktop));*/
   display: flex;
   background-size: cover;
   background-position: center;
