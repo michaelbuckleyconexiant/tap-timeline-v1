@@ -452,7 +452,7 @@ body {
   transition: all 250ms;
 }
 #trigger-mobile-menu {
-
+ 
 }
 .sticky-menu {
   position: fixed;
@@ -463,13 +463,17 @@ body {
   height: 60px;
   background: rgba(0, 0, 0, 0);
   opacity: 0;
-  transition: opacity 0.3s ease-in-out;
+  transform: translateX(100%); /* Start off-screen */
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
   pointer-events: none;
 }
+
 .sticky-menu.visible {
   opacity: 1;
+  transform: translateX(0); /* Slide in */
   pointer-events: auto;
 }
+
 /******************** tablet ********************/
 @media screen and (max-width: 1200px) {
   .tap-timeline-section {
