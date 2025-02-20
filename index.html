@@ -315,7 +315,7 @@
       <aside class="tap-timeline-aside fade-in-right">
 
 
-
+<div class="tap-timeline-aside-inner">
 
         <h5>Historic Milestones</h5>
         <h3><a href="#top">HER2-Positive Metastatic Breast Cancer</a></h3>
@@ -382,7 +382,7 @@
           </div>
         </section>
         <!-- year 4 : END -->
-
+      </div>
       </aside>
       <!-- timeline sidebar : END -->
 
@@ -404,35 +404,6 @@
   <!-- animation fade js -->
 
   <script src="js/animation-fade.js"></script>
-
-
-
-
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      let stickyMenu = document.querySelector(".sticky-menu");
-      let trigger = document.querySelector("#trigger-mobile-menu");
-
-      let observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            let triggerPosition = trigger.getBoundingClientRect().top;
-
-            if (triggerPosition <= 0) {
-              stickyMenu.classList.add("visible");
-            } else {
-              stickyMenu.classList.remove("visible");
-            }
-          });
-        },
-        { threshold: 0 } // Ensures it only triggers when reaching the top
-      );
-
-      observer.observe(trigger);
-    });
-
-
-  </script>
 
 
 </body>
