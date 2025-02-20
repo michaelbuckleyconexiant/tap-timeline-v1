@@ -1,18 +1,14 @@
 document.addEventListener("DOMContentLoaded", function () {
     function activateSection(sectionId) {
-        // Ensure the ID exists
         const targetSection = document.getElementById(sectionId);
         if (!targetSection) return;
 
-        // Remove active states from all dots, links, and texts
         document.querySelectorAll(".tap-timeline-aside-dot").forEach(dot => dot.classList.remove("active-dot"));
         document.querySelectorAll(".tap-timeline-aside-blurb").forEach(link => link.classList.remove("active-text"));
 
-        // Find all corresponding links and activate them
         document.querySelectorAll(`a[href='#${sectionId}']`).forEach(activeLink => {
             activeLink.classList.add("active-text");
 
-            // Find the parent section and its dot
             const parentSection = activeLink.closest(".tap-timeline-aside-section");
             if (parentSection) {
                 const dot = parentSection.querySelector(".tap-timeline-aside-dot");
@@ -22,7 +18,6 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
 
-        // Smooth scrolling to the section
         targetSection.scrollIntoView({ behavior: "smooth", block: "start" });
     }
 
@@ -30,7 +25,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const menuButton = document.querySelector(".tap-timeline-aside-mobile-menu");
     const sidebar = document.querySelector(".tap-timeline-aside");
 
-    // Click event for sidebar navigation
     document.body.addEventListener("click", function (event) {
         const link = event.target.closest("a[href^='#']");
         if (link && link.getAttribute("href")) {
@@ -39,14 +33,17 @@ document.addEventListener("DOMContentLoaded", function () {
             activateSection(targetId);
             history.pushState(null, "", `#${targetId}`);
 
-            // Close sidebar when a section link is clicked (only on mobile)
             if (window.innerWidth <= 800 && sidebar) {
                 sidebar.classList.remove("open");
+
+                // Ensure the menu icon switches back when closed
+                const icon = menuButton.querySelector("i");
+                icon.classList.remove("fa-xmark");
+                icon.classList.add("fa-list");
             }
         }
     });
 
-    // Activate section on page load if a hash exists
     window.addEventListener("load", function () {
         const currentHash = window.location.hash.substring(1).trim();
         if (currentHash) {
@@ -54,7 +51,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // Scroll Detection for Active State
     const sections = document.querySelectorAll(".tap-timeline-section");
 
     if (sections.length === 0) {
@@ -97,15 +93,32 @@ document.addEventListener("DOMContentLoaded", function () {
 
     console.log("Scroll observer initialized with", sections.length, "sections.");
 
-    // Sidebar toggle functionality
+    // Sidebar toggle functionality with icon change
     if (menuButton && sidebar) {
         menuButton.addEventListener("click", function () {
             sidebar.classList.toggle("open");
+
+            // Find the icon inside the button
+            const icon = menuButton.querySelector("i");
+
+            // Toggle the FontAwesome icon class
+            if (sidebar.classList.contains("open")) {
+                icon.classList.remove("fa-list");
+                icon.classList.add("fa-xmark");
+            } else {
+                icon.classList.remove("fa-xmark");
+                icon.classList.add("fa-list");
+            }
         });
 
         document.addEventListener("click", function (event) {
             if (!sidebar.contains(event.target) && !menuButton.contains(event.target)) {
                 sidebar.classList.remove("open");
+
+                // Ensure the icon switches back when closing
+                const icon = menuButton.querySelector("i");
+                icon.classList.remove("fa-xmark");
+                icon.classList.add("fa-list");
             }
         });
     }
@@ -132,4 +145,4 @@ document.addEventListener("DOMContentLoaded", function () {
     stickyObserver.observe(trigger);
 });
 
-// WORKING
+//WORKING

@@ -247,6 +247,9 @@ li {
 .tap-timeline-aside {
   padding: 3rem 2rem 2rem 2rem;
   display: flex;
+  transform: translateX(0);
+  opacity: 1;
+  visibility: visible;
   flex-direction: column;
   position: sticky;
   top: var(--tap-nav-height-desktop);
@@ -514,9 +517,6 @@ li {
 /******************** mobile ********************/
 @media screen and (max-width: 800px) {
 
-
-
-
   .tap-timeline-aside-mobile-menu {
     display: block;
   }
@@ -531,9 +531,11 @@ li {
     position: fixed;
 
   }
+
   .tap-timeline-aside {
     transform: translateX(-100%);
     display: none;
+    opacity: 0;
     flex-direction: column;
     position: fixed;
     top: var(--tap-nav-height-mobile);
@@ -544,10 +546,14 @@ li {
     padding: 0;
     width: 100%;
     height: 100%;
-}
+    transition: all 250ms;
+
+  }
+
   .tap-timeline-aside.open {
     transform: translateX(0);
     display: flex;
+
   }
 
   .center-hero-bg {
