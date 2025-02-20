@@ -17,9 +17,9 @@ document.addEventListener("DOMContentLoaded", function () {
   // Function to show the menu button after scrolling
   function toggleMenuVisibility() {
     if (window.scrollY > scrollThreshold) {
-      menuButton.style.cssText = "display: block !important;"; // Show menu button
+      menuButton.style.cssText = "display: block !important;";
     } else {
-      menuButton.style.cssText = "display: none !important;"; // Hide menu button
+      menuButton.style.cssText = "display: none !important;";
     }
   }
 
@@ -27,7 +27,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Menu toggle functionality
   menuButton.addEventListener("click", function () {
-    asidePanel.style.display = asidePanel.style.display === "none" ? "flex" : "none";
+    if (window.getComputedStyle(asidePanel).display === "none") {
+      asidePanel.style.display = "flex";
+    } else {
+      asidePanel.style.display = "none";
+    }
     icon.classList.toggle("fa-list");
     icon.classList.toggle("fa-xmark");
   });
@@ -42,6 +46,39 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   });
+
+  // Get all sections with an ID that match anchor hrefs
+  const sections = Array.from(document.querySelectorAll("section[id]"));
+
+  function highlightActiveLink() {
+    let scrollPosition = window.scrollY + window.innerHeight * 0.3; // Adjusted for better accuracy
+
+    let activeSection = sections.find(section => {
+      const rect = section.getBoundingClientRect();
+      return rect.top <= scrollPosition && rect.bottom >= scrollPosition;
+    });
+
+    if (activeSection) {
+      let activeId = activeSection.getAttribute("id");
+
+      // Remove active class from all links
+      anchorTags.forEach(anchor => {
+        anchor.classList.remove("active-text");
+      });
+
+      // Add active class to the matching link
+      let activeLink = document.querySelector(`.tap-timeline-aside a[href="#${activeId}"]`);
+      if (activeLink) {
+        activeLink.classList.add("active-text");
+      }
+    }
+  }
+
+  // Attach scroll event to update active state
+  window.addEventListener("scroll", highlightActiveLink);
+
+  // Run on page load to set the initial active link
+  highlightActiveLink();
 
   // Adjust menu visibility on resize
   window.addEventListener("resize", function () {
