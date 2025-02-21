@@ -121,7 +121,7 @@ body {
   height: 4px;
   width: 50px;
   margin: 2rem 0;
-  background-color: var(--tap-dark-gray);
+  background-color: var(--tap-teal);
 }
 .tap-timeline-section {
   scroll-snap-align: start;
