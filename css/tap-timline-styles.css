@@ -488,13 +488,17 @@ body {
     padding: 3rem 3rem;
   }
 }
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 992px) {
   .tap-timeline-section {
     padding: 2rem 3rem;
   }
+  .scroll-container {
+    scroll-padding-top: var(--tap-nav-height-mobile);
+  }
+
 }
 /******************** mobile ********************/
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 768px) {
   .tap-timeline-aside-mobile-menu {
     display: block;
   }
