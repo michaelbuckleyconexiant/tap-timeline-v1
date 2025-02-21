@@ -541,7 +541,7 @@ body {
     margin-top: var(--tap-nav-height-mobile);
   }
   .tap-timeline-section {
-    padding: 2rem 5%;
+    padding: 6rem 5%;
     min-height: calc(100vh - var(--tap-nav-height-mobile));
   }
   .tap-timeline-article-container h1 {
