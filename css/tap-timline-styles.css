@@ -240,7 +240,6 @@ body {
 }
 /* timeline sidebar */
 .tap-timeline-aside {
-  padding: 3rem 2rem 2rem 2rem;
   /* display: flex; */
   opacity: 1;
   transform: translateX(0);
@@ -248,6 +247,16 @@ body {
   position: sticky;
   top: var(--tap-nav-height-desktop);
   height: fit-content;
+}
+.tap-timeline-aside-inner {
+  padding: 3rem 2rem 2rem 2rem;
+  overflow-y: scroll;
+  height: 100vh;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.tap-timeline-aside-inner::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for WebKit browsers */
 }
 .tap-timeline-aside h3 {
   font-family: "Roboto", serif;
@@ -493,7 +502,7 @@ body {
     width: 75%;
     height: 100%;
     background: #fff;
-    padding: 3rem 2rem 2rem 2rem;
+    padding-top: 5rem;
     right: 0;
     position: fixed;
   }
