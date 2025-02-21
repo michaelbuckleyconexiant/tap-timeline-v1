@@ -301,7 +301,7 @@ body {
 .tap-timeline-aside-blurb.active-text::before {
   content: "";
   position: absolute;
-  left: -32px;
+  left: -32.5px;
   top: 60%;
   transform: translateY(-50%);
   width: 5px;
@@ -315,7 +315,7 @@ body {
 .tap-timeline-aside-blurb p::before {
   content: "";
   position: absolute;
-  left: -32px;
+  left: -32.5px;
   top: 60%;
   transform: translateY(-50%);
   width: 5px;
