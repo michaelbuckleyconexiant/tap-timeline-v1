@@ -1,0 +1,473 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The ASCO Post Timeline V1</title>
+<!-- image preload -->
+
+<link rel="preload" href="images/" as="image">
+<link rel="preload" href="images/095675c50308f5c96c22be6d3d022fd07327c71cf9c8ff8764edc735f8d94e67_3200x1790.webp" as="image">
+<link rel="preload" href="images/1000_F_400803553_TDNrAuNC607Qan2eBsNIly0DnWWtnMr7.webp" as="image">
+<link rel="preload" href="images/67a13e47b0db5692e314fea5.webp" as="image">
+<link rel="preload" href="images/67a53ca1a27e6e25307270a3_AdobeStock_838684473.webp" as="image">
+<link rel="preload" href="images/67a53f9d9163ad1f93243811_AdobeStock_266980135.webp" as="image">
+<link rel="preload" href="images/67a540657ccb1ad5e5b3e290_AdobeStock_907164824.webp" as="image">
+<link rel="preload" href="images/67a540fe6c017a9c3f344ac6_AdobeStock_933486027.webp" as="image">
+
+<!-- Reset CSS styles for cross-browser consistency -->
+<link rel="stylesheet" href="css/reset.css">
+
+<!-- Timeline-specific styles -->
+<link rel="stylesheet" href="css/tap-timline-styles.css">
+
+<!-- Icons for UI elements -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+<!-- demo tap nav section - delete for live site : START -->
+
+<div id="shadow-root"></div>
+<script>
+    const shadowContainer = document.getElementById("shadow-root");
+    const shadow = shadowContainer.attachShadow({ mode: "open" }); shadow.innerHTML = `
+<link rel="stylesheet" href="https://ascopost.com/css/bootstrap.css">
+<link rel="stylesheet" href="https://ascopost.com/css/TAP.min.css">
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+  font-family: "Roboto", serif;
+}
+
+</style>
+
+<div class="scoped-content"><nav class="navbar navbar-fixed-top navbar-bootsnipp animate" role="navigation">
+<div class="container"> 
+<!-- Brand and toggle get grouped for better mobile display --><div class="navbar-header">
+<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+<span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button><a class="navbar-brand" href="/"><img class="logo"  src="https://ascopost.com/media/14006457/tap-wt-logo_2017.svg" width="210px" height="43px" alt="The ASCO Post"></a> </div><!-- Collect the nav links, forms, and other content for toggling -->
+<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+<ul class="nav navbar-nav navbar-right">
+<li class="hidden"> <a href="#page-top"></a> </li><li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About <span class="caret"></span></a>
+<ul class="dropdown-menu">
+<li><a href="/about-the-asco-post/">About The ASCO Post</a></li>
+<li><a href="/editorial-board/">Editorial Board</a></li>
+<li><a href="/rights-and-permissions/">Rights and Permissions</a></li>
+<li><a href="/contact">Contact</a></li>
+<li class="page-scroll"> <a href="/Subscribe/default.aspx">Subscribe</a> </li></ul>
+</li><li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">News <span class="caret"></span></a>
+<ul class="dropdown-menu">
+<li><a href="/Departments?D=FDA%20Update">FDA Update</a></li>
+<li><a href="/Departments?D=Journal%20Spotlight">Journal Spotlight</a></li>
+<li><a href="/Departments?D=Expert’s%20Corner">Expert&apos;s Corner</a></li>
+<li><a href="/Departments?D=In%20the%20Clinic">In the Clinic</a></li>
+<li role="separator" class="divider"></li>
+<li><a href="/Issues/">View By Issue</a></li>
+<li role="separator" class="divider"></li>
+<li><a href="/Departments/">View All</a></li>
+</ul>
+</li>
+<li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Meetings <span class="caret"></span></a>
+<ul class="dropdown-menu">
+<li><a href='/Meetings/?m=2025+STS+Annual+Meeting'>2025 STS Annual Meeting</a></li><li><a href='/Meetings/?m=2025+ASCO+GI'>2025 ASCO GI</a></li><li><a href='/Meetings/?m=2024+SABCS'>2024 SABCS</a></li><li><a href='/Meetings/?m=Thematic+Newsreels'>Thematic Newsreels</a></li><li><a href='/Meetings/?m=2024+ASH+Annual+Meeting'>2024 ASH Annual Meeting</a></li>
+<li role="separator" class="divider"></li>
+<li><a href="/calendar">Calendar</a></li>
+<li role="separator" class="divider"></li>
+<li><a href="/Meetings/">View All</a></li>
+</ul>
+</li>
+<li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Topics <span class="caret"></span></a>
+<ul class="dropdown-menu">
+<li><a href="/topics/solid-tumors/breast-cancer-highlights/">Breast Cancer</a></li>
+<li><a href="/topics/solid-tumors/lung-cancer-highlights/">Lung Cancer</a></li>
+<li><a href="/topics/solid-tumors/prostate-cancer-highlights/">Prostate Cancer</a></li>
+<li><a href="/topics/hematologic-malignancies/lymphoma-highlights/">Lymphoma</a></li>
+<li><a href="/topics/issues-in-oncology/cardio-oncology/">Cardio-oncology</a></li>
+<li role="separator" class="divider"></li>
+<li><a href="/topics/">View All</a></li>
+</ul>
+</li>
+<li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Videos <span class="caret"></span></a>
+<ul class="dropdown-menu">
+<li><a href="/newsreels/">Newsreels</a></li>
+<li><a href="/video-roundtable/">Video Roundtables</a></li>
+</ul>
+</li>
+<li><a href="/podcasts/" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">Podcasts </a></li>
+<li class="page-scroll"> <a style="color: #00B3BB;" href="/Subscribe/default.aspx"><strong>Subscribe</strong></a> </li>
+<li>
+<!-- search box start -->
+<form action="/search-results/" method="GET" role="search">
+<input class="search" type="text" name="q" placeholder="Search..." required>
+<input class="button-search" type="submit" value="&nbsp;">
+</form>
+<!-- search box end -->
+</li>
+</ul>		
+</div>
+</div>
+</nav>
+</div>
+`;
+  </script> 
+
+<!-- demo tap nav section - delete for live site : END --> 
+
+<!-- scroll container and all content : START -->
+
+<div class="scroll-container"> 
+  <!-- hero : START -->
+  
+  <div class="tap-timline-top-margin"></div>
+	
+	
+	
+	
+	
+  <section id="top" class="tap-timeline-section tap-timeline-section-bg-effect center-hero-bg"
+      style="background-image: url('images/AdobeStock_400803553.webp');">
+	  
+
+	  
+	  
+    <div class="tap-timeline-article-wrapper-hero move-article-hero-down"> 
+      
+	  
+		
+      <article class="tap-timeline-article-container hero-fade-in">
+        <h5>Historic Milestones</h5>
+        <h1>HER2-Positive Metastatic Breast Cancer</h1>
+        <div class="tap-timeline-hero-bar-accent"></div>
+        <p>Over the past two decades, advancements in treatment options for HER2-positive metastatic breast cancer
+          have
+          transformed the standard of care, leading to significantly improved outcomes, extended time-to-progression,
+          and
+          enhanced overall survival rates. For more details, view key milestones as reported by The ASCO Post.</p>
+        <a href="#item-1" class="tap-timeline-down-arrow-btn"> <i class="material-icons">arrow_downward</i></a> </article>
+		  
+    </div>
+  </section>
+  <!-- hero : END --> 
+	
+	     <!-- mobile menu : START -->
+      <div id="trigger-mobile-menu"></div>
+		
+      <div class="sticky-menu">
+        <button class="tap-timeline-aside-mobile-menu"> <i class="fa-solid fa-list"></i> </button>
+      </div>
+      <!-- mobile menu : START -->  
+	
+  
+  <!-- timeline container : START -->
+  <div class="tap-timeline-container">
+    <main class="tap-timeline-main"> 
+      
+      <!-- item 1 : START -->
+      <section id="item-1" class="tap-timeline-section tap-timeline-section-bg-effect"
+          style="background-image: url('images/67a13e47b0db5692e314fea5.webp');">
+        <div class="tap-timeline-article-wrapper">
+          <article class="tap-timeline-article-container fade-in-left">
+            <h5>2017</h5>
+            <h2>Second-Line Therapy:</h2>
+            <p>Previously, TDM-1 was the standard second-line treatment after taxane and trastuzumab. The <strong>EMILIA</strong> trial demonstrated TDM-1's superiority over lapatinib plus capecitabine. </p>
+            <p class="tap-timeline-author">By Matthew Stenger</p>
+            <a target="_blank" href="https://ascopost.com/News/55667" class="tap-timeline-btn">Read More <i
+                  class="material-icons">arrow_forward</i></a> </article>
+        </div>
+      </section>
+      
+      <!-- item 1 : END --> 
+      
+      <!-- item 2 : START -->
+      <section id="item-2" class="tap-timeline-section tap-timeline-section-bg-effect"
+          style="background-image: url('images/67a53f9d9163ad1f93243811_AdobeStock_266980135.webp');">
+        <div class="tap-timeline-article-wrapper">
+          <article class="tap-timeline-article-container fade-in-left">
+            <h5>2019</h5>
+            <h2>First-line Therapy (2024 Standard of Care):</h2>
+            <p>The current standard front-line therapy is a combination of taxane (docetaxel or paclitaxel),
+              trastuzumab,
+              and pertuzumab, based on the CLEOPATRA trial results.</p>
+            <p class="tap-timeline-author">By Caroline Helwick</p>
+            <a target="_blank"
+                href="https://ascopost.com/issues/july-10-2019/cleopatra-end-of-study-analysis-in-metastatic-breast-cancer/"
+                class="tap-timeline-btn">Read More <i class="material-icons">arrow_forward</i></a> </article>
+        </div>
+      </section>
+      <!-- item 2 : END --> 
+      
+      <!-- item : START -->
+      <section id="item-3" class="tap-timeline-section tap-timeline-section-bg-effect"
+          style="background-image: url('images/67a53ca1a27e6e25307270a3_AdobeStock_838684473.webp');">
+        <div class="tap-timeline-article-wrapper">
+          <article class="tap-timeline-article-container fade-in-left">
+            <h5>2020</h5>
+            <h2>Emerging Therapies:</h2>
+            <p><strong>Trastuzumab Deruxtecan (T-DXd):</strong> Shown to have better progression-free survival and
+              overall
+              survival compared to TDM-1 in the DESTINY-Breast03 study. This therapy might move to frontline settings
+              pending DESTINY-Breast09results.</p>
+            <p class="tap-timeline-author">By Jo Cavallo</p>
+            <a target="_blank"
+                href="https://ascopost.com/issues/october-10-2021/destiny-breast03-trial-supports-second-line-use-of-t-dxd-in-metastatic-her2-positive-breast-cancer/"
+                class="tap-timeline-btn">Read More <i class="material-icons">arrow_forward</i></a>
+           </article>
+        </div>
+      </section>
+      
+      <!-- item : END --> 
+		
+		
+		      <!-- item : START -->
+      <section id="item-4" class="tap-timeline-section tap-timeline-section-bg-effect"
+          style="background-image: url('images/67a53ca1a27e6e25307270a3_AdobeStock_838684473.webp');">
+        <div class="tap-timeline-article-wrapper">
+          <article class="tap-timeline-article-container fade-in-left">
+            <h5>2020</h5>
+            <h2>Emerging Therapies:</h2>
+          
+            <p><strong>Tucatinib:</strong> Added to TDM-1 in the <strong>HER2CLIMB-02</strong> study, showed improved
+              progression-free survival but did not demonstrate statistically significant overall survival benefits
+              early
+              on.</p>
+            <p class="tap-timeline-author">By Alice Goodman</p>
+            <a target="_blank"
+                href="https://ascopost.com/issues/december-25-2023/tucatinib-plus-t-dm1-extends-progression-free-survival-vs-t-dm1-alone-in-advanced-her2-positive-breast-cancer/"
+                class="tap-timeline-btn">Read More <i class="material-icons">arrow_forward</i></a> </article>
+        </div>
+      </section>
+      
+      <!-- item : END --> 
+		
+      
+      <!-- item : START -->
+      <section id="item-5" class="tap-timeline-section tap-timeline-section-bg-effect"
+          style="background-image: url('images/67a540657ccb1ad5e5b3e290_AdobeStock_907164824.webp');">
+        <div class="tap-timeline-article-wrapper">
+          <article class="tap-timeline-article-container fade-in-left">
+            <h5>2022</h5>
+            <h2>Post-TDM-1 Options:</h2>
+            <p>T-DXd: Based on DESTINY-Breast02 results, useful after progression on TDM-1</p>
+            <p class="tap-timeline-author">By Jo Cavallo</p>
+            <a target="_blank"
+                href="https://ascopost.com/news/april-2023/trastuzumab-deruxtecan-vs-physician-s-choice-in-her2-positive-metastatic-breast-cancer-previously-treated-with-trastuzumab-emtansine/"
+                class="tap-timeline-btn">Read More <i class="material-icons">arrow_forward</i></a>
+           </article>
+        </div>
+      </section>
+      
+      <!-- item : END --> 
+		
+		
+		
+		 <!-- item : START -->
+      <section id="item-6" class="tap-timeline-section tap-timeline-section-bg-effect"
+          style="background-image: url('images/67a540657ccb1ad5e5b3e290_AdobeStock_907164824.webp');">
+        <div class="tap-timeline-article-wrapper">
+          <article class="tap-timeline-article-container fade-in-left">
+            <h5>2022</h5>
+            <h2>Post-TDM-1 Options:</h2>
+         
+            <p>Tucatinib plus Capecitabine: Effective per the HER2CLIMB study, especially beneficial for patients with
+              brain metastases.</p>
+            <p class="tap-timeline-author">By Jo Cavallo</p>
+            <a target="_blank"
+                href="https://ascopost.com/issues/december-25-2023/tucatinib-plus-t-dm1-extends-progression-free-survival-vs-t-dm1-alone-in-advanced-her2-positive-breast-cancer/"
+                class="tap-timeline-btn">Read More <i class="material-icons">arrow_forward</i></a> </article>
+        </div>
+      </section>
+      
+      <!-- item : END --> 
+      
+      <!-- item : START -->
+      <section id="item-7" class="tap-timeline-section tap-timeline-section-bg-effect"
+          style="background-image: url('images/67a540fe6c017a9c3f344ac6_AdobeStock_933486027.webp');">
+        <div class="tap-timeline-article-wrapper">
+          <article class="tap-timeline-article-container fade-in-left">
+            <h5>2023</h5>
+            <h2>Brain Metastases</h2>
+            <ul>
+              <li>Prevalence: Up to 50% of HER2-positive metastatic breast cancer patients develop brain metastases. </li>
+              <li>Treatment Options: Tucatinib-based regimens are preferred for active brain metastases. T-DXd has
+                shown
+                efficacy in stable brain metastases, with ongoing studies exploring its effectiveness in active cases. </li>
+            </ul>
+            <p class="tap-timeline-author">By Matthew Stenger</p>
+            <a target="_blank"
+                href="https://ascopost.com/issues/digital-supplement-sabcs-meeting-highlights-2023/highlights-from-the-2023-san-antonio-breast-cancer-symposium/"
+                class="tap-timeline-btn">Read More <i class="material-icons">arrow_forward</i></a> </article>
+        </div>
+      </section>
+      
+      <!-- item : END --> 
+		
+	
+		
+      
+      <!-- item : START -->
+      <section id="item-8" class="tap-timeline-section tap-timeline-section-bg-effect"
+          style="background-image: url('images/095675c50308f5c96c22be6d3d022fd07327c71cf9c8ff8764edc735f8d94e67_3200x1790.webp');">
+        <div class="tap-timeline-article-wrapper">
+          <article class="tap-timeline-article-container fade-in-left">
+            <h5>August 2024</h5>
+            <h2>Current Practice</h2>
+            <p>For first-line therapy, the standard is THP (taxane, trastuzumab, pertuzumab), followed by T-DXd if
+              needed.
+              For brain metastases, tucatinib-based regimens are recommended. After <strong>T-DXd</strong>, other
+              options
+              include TDM-1, tucatinib-based regimens, lapatinib, and various chemotherapy or endocrine therapies.
+              &ldquo;HER2-positive metastatic breast cancer survival has greatly improved, shifting from the worst
+              prognosis to one of the best due to targeted therapies.&rdquo;</p>
+            <p class="tap-timeline-author">Sara Hurvitz</p>
+            <a target="_blank"
+                href="https://ascopost.com/videos/ibc-west-2024/sara-hurvitz-on-new-therapeutic-strategies-for-her2-positive-metastatic-disease-including-brain-metastases/"
+                class="tap-timeline-btn"><i style="margin-right: 10px;" class="fa-solid fa-circle-play"></i> Watch
+            Video</a> </article>
+        </div>
+      </section>
+      
+      <!-- item : END --> 
+      
+    </main>
+    
+    <!-- timeline sidebar : START -->
+    <aside class="tap-timeline-aside fade-in-right">
+      <div class="tap-timeline-aside-inner">
+        <h5>Historic Milestones</h5>
+        <h3><a href="#top">HER2-Positive Metastatic Breast Cancer</a></h3>
+        <!-- year 1 : START -->
+        
+        <section class="tap-timeline-aside-section">
+          <div class="tap-timeline-dot-line-container"> <a href="#item-1" class="tap-timeline-aside-dot">&nbsp;</a>
+            <div class="tap-timeline-aside-line"></div>
+          </div>
+          <div> <a href="#item-1" class="tap-timeline-aside-year">2017</a> <a href="#item-1" class="tap-timeline-aside-blurb">
+            <p>Second-Line Therapy</p>
+            </a> </div>
+        </section>
+        <!-- year 1 : END --> 
+        
+        <!-- year 2 : START -->
+        
+        <section class="tap-timeline-aside-section">
+          <div class="tap-timeline-dot-line-container"> <a href="#item-2" class="tap-timeline-aside-dot">&nbsp;</a>
+            <div class="tap-timeline-aside-line"></div>
+          </div>
+          <div> <a href="#item-2" class="tap-timeline-aside-year">2019</a> <a href="#item-2" class="tap-timeline-aside-blurb">
+            <p>Firts-Line Therapy</p>
+            </a> </div>
+        </section>
+        <!-- year 2 : END --> 
+        
+
+		  
+		  
+		   <!-- year : START -->
+        
+        <section class="tap-timeline-aside-section">
+          <div class="tap-timeline-dot-line-container"> <a href="#item-3" class="tap-timeline-aside-dot">&nbsp;</a>
+            <div class="tap-timeline-aside-line"></div>
+          </div>
+          <div> <a href="#item-3" class="tap-timeline-aside-year">2020</a>
+			  
+			  <a href="#item-3" class="tap-timeline-aside-blurb">
+            <p>Emerging Therapies 1</p>
+            </a> 
+			  
+			  			  <a href="#item-4" class="tap-timeline-aside-blurb">
+            <p>Emerging Therapies 2</p>
+            </a> 
+			
+			
+			</div>
+        </section>
+        <!-- year : END --> 
+		  
+		  
+		   <!-- year : START -->
+        
+        <section class="tap-timeline-aside-section">
+          <div class="tap-timeline-dot-line-container"> <a href="#item-5" class="tap-timeline-aside-dot">&nbsp;</a>
+            <div class="tap-timeline-aside-line"></div>
+          </div>
+          <div> <a href="#item-5" class="tap-timeline-aside-year">2022</a>
+			  
+			  <a href="#item-5" class="tap-timeline-aside-blurb">
+            <p>Post-TDM-Options 1</p>
+            </a> 
+			  
+			  
+			    <a href="#item-6" class="tap-timeline-aside-blurb">
+            <p>Post-TDM-Options 2</p>
+            </a> 
+			
+			
+			</div>
+        </section>
+        <!-- year : END --> 
+		  
+		  
+		    <!-- year : START -->
+        
+        <section class="tap-timeline-aside-section">
+          <div class="tap-timeline-dot-line-container"> <a href="#item-7" class="tap-timeline-aside-dot">&nbsp;</a>
+            <div class="tap-timeline-aside-line"></div>
+          </div>
+          <div> <a href="#item-7" class="tap-timeline-aside-year">2023</a>
+			  
+			  <a href="#item-7" class="tap-timeline-aside-blurb">
+            <p>Brain Metastases</p>
+            </a> 
+			
+			
+			</div>
+        </section>
+        <!-- year : END --> 
+		  
+
+		  
+        
+        <!-- year : START -->
+        
+        <section class="tap-timeline-aside-section">
+          <div class="tap-timeline-dot-line-container"> <a href="#item-8" class="tap-timeline-aside-dot">&nbsp;</a>
+            <div class="tap-timeline-aside-line"></div>
+          </div>
+          <div> <a href="#item-8" class="tap-timeline-aside-year">2024</a> 
+			  <a href="#item-8" class="tap-timeline-aside-blurb">
+            <p>Current Practive</p>
+            </a> </div>
+        </section>
+        <!-- year 4 : END --> 
+      </div>
+    </aside>
+    <!-- timeline sidebar : END --> 
+    
+  </div>
+  
+  <!-- timeline container : END --> 
+  
+</div>
+
+<!-- scroll container and all content : END --> 
+
+<!-- ////////// javascript docs : START ////////// --> 
+
+<!-- timeline animation js --> 
+
+<script src="js/timeline-animation.js"></script> 
+
+<!-- animation fade js --> 
+
+<script src="js/animation-fade.js"></script>
+</body>
+</html>
