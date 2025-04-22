@@ -291,7 +291,7 @@ body {
   text-decoration: none;
   color: black;
   transition: color 0.3s ease;
-  color: inherit;
+	position: relative;
 }
 .tap-timeline-aside-blurb.active-text {
   color: var(--tap-teal);
