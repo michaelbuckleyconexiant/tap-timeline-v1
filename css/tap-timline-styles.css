@@ -117,6 +117,7 @@ body {
   /* background-color: rgba(0, 0, 0, 0.5); */
   padding: 10px 0;
   position: absolute;
+  display: block;
  } 
  .ad-container-tap-timeline__top {
  top: 0;
@@ -148,6 +149,13 @@ body {
    top: 50%;
    transform: translateY(-50%) rotate(180deg);
    text-align: center;
+ }
+
+
+ @media screen and (max-width: 1100px) {
+  .ad-container-tap-timeline {
+    display: none;
+   } 
  }
 
 /* main */
