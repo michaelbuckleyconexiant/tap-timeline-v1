@@ -10,11 +10,6 @@
   /* outline: 1px solid red; */
 }
 
-
-
-
-
-
 :root {
   --tap-navy: #00457c;
   --tap-teal: #00b3bb;
@@ -50,6 +45,7 @@ html {
   height: 100vh;
   overflow-x: hidden;
   scroll-padding-top: var(--tap-nav-height-desktop);
+  position: relative;
 }
 .tap-timeline-section-bg-effect {
   contain: layout paint;
