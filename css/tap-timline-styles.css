@@ -247,6 +247,8 @@ body {
   position: sticky;
   top: var(--tap-nav-height-desktop);
   height: fit-content;
+  background-color: white;
+  z-index: 999;
 }
 .tap-timeline-aside-inner {
   padding: 3rem 2rem 2rem 2rem;
