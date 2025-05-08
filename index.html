@@ -143,42 +143,37 @@
 
 
 
-    <section class="ad-timeline-container">
+    <div class="ad-timeline-container">
 
       <style>
         .ad-timeline-container {
-          display: grid;
           position: absolute;
-          grid-template-columns: auto 300px;
           scroll-snap-align: start;
           width: 100%;
           min-height: calc(100vh - var(--tap-nav-height-desktop));
           overflow: hidden;
         }
-        .ad-timeline-container-row {
-          position: relative;
-        }
-
         .ad-tap-timeline {
-          padding: 15px;
+          padding: 15px 8rem;
           background-color: rgba(0, 0, 0, 0.5);
           width: 100%;
           margin: 0 auto;
-          text-align: center;
+          display: grid;
+          grid-template-columns: auto 300px;
         }
-
         .ad-tap-timeline__top {
           position: absolute;
           top: 0;
           z-index: 998;
-
         }
-
         .ad-tap-timeline__bottom {
           position: absolute;
           bottom: 0;
           z-index: 998;
-
+        }
+        .ad-column {
+          max-width: 900px;
+          margin: 0 auto;
         }
       </style>
 
@@ -186,8 +181,12 @@
 
         <div class="ad-tap-timeline ad-tap-timeline__top">
 
-          <img src="/images/728x90-sample.png">
-
+          <div class="ad-column">
+            <img src="/images/728x90-sample.png">
+          </div>
+          
+          <div></div>
+        
         </div>
 
         <!-- top ad : END -->
@@ -197,12 +196,12 @@
 
         <div class="ad-tap-timeline ad-tap-timeline__bottom">
 
-          <img src="/images/728x90-sample.png">
-
+          <div class="ad-column"> <img src="/images/728x90-sample.png"></div>
+          <div></div>
         </div>
         <!-- bottom ad : END -->
 
-    </section>
+      </div>
 
 
 
